@@ -9,8 +9,9 @@ const DOCTOR = {
   rating: '5.0',
   reviews: '80+',
   experience: '15+',
-  location: 'Barasat, North 24 Parganas, West Bengal',
-  address: 'Barasat, Kolkata – 700124',
+  location: 'Barasat, West Bengal',
+  address: 'Barasat, North 24 Parganas, Kolkata – 700124, West Bengal',
+  degrees: 'MBBS, MD (Respiratory Medicine) – WBUHS',
   mapSrc: 'https://maps.google.com/maps?q=22.724586,88.4806644&t=&z=15&ie=UTF8&iwloc=&output=embed',
   mapLink: 'https://maps.app.goo.gl/m76stFHB1HcHUwjM8',
   services: [
@@ -128,23 +129,19 @@ export default function App() {
             </div>
           </div>
 
-          {/* Doctor Photo Placeholder */}
+          {/* Doctor Photo */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-72 h-80 lg:w-80 lg:h-96 rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40" style={{background: 'linear-gradient(135deg, #0c4a6e 0%, #0f172a 100%)'}}>
-                <div className="w-full h-full flex flex-col items-center justify-center gap-4">
-                  <div className="w-32 h-32 rounded-full bg-sky-800/60 border-4 border-sky-500/40 flex items-center justify-center text-6xl shadow-inner">
-                    👨‍⚕️
-                  </div>
-                  <div className="text-center px-4">
-                    <p className="text-white font-bold text-lg">{DOCTOR.name}</p>
-                    <p className="text-sky-400 text-sm">{DOCTOR.shortSpecialty}</p>
-                    <p className="text-slate-400 text-xs mt-1">{DOCTOR.location}</p>
-                  </div>
+              <div className="w-72 h-96 lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40 flex flex-col justify-end relative" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url('/doctor.png')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                <div className="p-6 relative z-10 text-left">
+                  <p className="text-white font-extrabold text-xl">{DOCTOR.name}</p>
+                  <p className="text-sky-400 text-sm font-semibold mb-1">Pulmonologist & Chest Specialist</p>
+                  <p className="text-slate-300 text-xs font-medium">{DOCTOR.degrees}</p>
+                  <p className="text-slate-400 text-xs mt-1 flex items-center gap-1">📍 {DOCTOR.location}</p>
                 </div>
               </div>
               {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 bg-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1.5">
+              <div className="absolute -bottom-4 -left-4 bg-emerald-500 text-white text-sm font-extrabold px-4 py-2 rounded-full shadow-lg flex items-center gap-1.5">
                 ⭐ {DOCTOR.rating} Rated
               </div>
             </div>
