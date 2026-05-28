@@ -83,7 +83,7 @@ export default function App() {
       </nav>
 
       {/* ===== HERO ===== */}
-      <section id="hero" className="relative min-h-screen flex items-center overflow-hidden" style={{background: 'linear-gradient(135deg, #0f172a 0%, #0c2340 50%, #0f172a 100%)'}}>
+      <section id="hero" className="relative min-h-[85vh] lg:min-h-screen flex items-center overflow-hidden" style={{background: 'linear-gradient(135deg, #0f172a 0%, #0c2340 50%, #0f172a 100%)'}}>
         {/* Animated background blobs */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-10" style={{background: 'radial-gradient(circle, #0284c7, transparent)', filter: 'blur(60px)'}}></div>
@@ -94,36 +94,36 @@ export default function App() {
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'linear-gradient(rgba(2,132,199,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(2,132,199,0.3) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
 
-        <div className="relative max-w-6xl mx-auto px-4 pt-28 pb-16 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-6xl mx-auto px-4 pt-20 pb-10 lg:pt-32 lg:pb-20 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/30 rounded-full px-4 py-1.5 mb-6">
-              <span className="text-sky-400 text-xs font-semibold tracking-widest uppercase">Barasat's Trusted Chest Specialist</span>
+            <div className="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/30 rounded-full px-3 py-1 mb-4 lg:mb-6">
+              <span className="text-sky-400 text-[10px] sm:text-xs font-semibold tracking-widest uppercase">Barasat's Trusted Chest Specialist</span>
             </div>
 
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-5">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-3 lg:mb-5">
               Breathe Easier.<br/>
               <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">Live Better.</span>
             </h1>
 
-            <p className="text-slate-300 text-lg mb-4 leading-relaxed">
+            <p className="text-slate-300 text-sm sm:text-base lg:text-lg mb-4 lg:mb-6 leading-relaxed">
               Expert chest medicine care for the families of Barasat and North 24 Parganas. From asthma to complex pulmonary conditions — get the right diagnosis, right here.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap gap-3 mb-6 lg:mb-8">
               <a
                 id="hero-book-btn"
                 href={`https://wa.me/${DOCTOR.whatsapp}?text=Hello%20Dr.%20Dhar%2C%20I%20would%20like%20to%20book%20an%20appointment.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white font-bold px-6 py-3 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-sky-500/40 hover:-translate-y-0.5"
+                className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white font-bold px-4 py-2.5 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base transition-all duration-200 shadow-lg hover:shadow-sky-500/40 hover:-translate-y-0.5"
               >
                 📅 Book Appointment
               </a>
               <a
                 id="hero-call-btn"
                 href={`tel:${DOCTOR.phone}`}
-                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-full text-base transition-all duration-200 hover:-translate-y-0.5"
+                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-4 py-2.5 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base transition-all duration-200 hover:-translate-y-0.5"
               >
                 📞 Call Now
               </a>
@@ -133,12 +133,12 @@ export default function App() {
           {/* Doctor Photo */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-72 h-96 lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40 flex flex-col justify-end relative" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url(${doctorImg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
-                <div className="p-6 relative z-10 text-left">
-                  <p className="text-white font-extrabold text-xl">{DOCTOR.name}</p>
-                  <p className="text-sky-400 text-sm font-semibold mb-1">Pulmonologist & Chest Specialist</p>
-                  <p className="text-slate-300 text-xs font-medium">{DOCTOR.degrees}</p>
-                  <p className="text-slate-400 text-xs mt-1 flex items-center gap-1">📍 {DOCTOR.location}</p>
+              <div className="w-full max-w-[280px] sm:max-w-xs h-[340px] sm:h-[360px] lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40 flex flex-col justify-end relative mx-auto lg:mx-0" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url(${doctorImg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                <div className="p-4 sm:p-6 relative z-10 text-left">
+                  <p className="text-white font-extrabold text-lg sm:text-xl">{DOCTOR.name}</p>
+                  <p className="text-sky-400 text-xs sm:text-sm font-semibold mb-1">Pulmonologist & Chest Specialist</p>
+                  <p className="text-slate-300 text-[10px] sm:text-xs font-medium">{DOCTOR.degrees}</p>
+                  <p className="text-slate-400 text-[10px] sm:text-xs mt-1 flex items-center gap-1">📍 {DOCTOR.location}</p>
                 </div>
               </div>
               {/* Floating badge */}
