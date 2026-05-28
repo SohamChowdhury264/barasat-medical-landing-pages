@@ -11,7 +11,7 @@ const DOCTOR = {
   experience: '15+',
   location: 'Barasat, North 24 Parganas, West Bengal',
   address: 'Barasat, Kolkata – 700124',
-  mapSrc: 'https://www.google.com/maps/embed?pb=!1m17!1s0x39f8a36ebf29442f:0x925e06fd6e2be4c0!2sDr.+Rishi+Dhar+Chest+Medicine!3m8!1m3!1d14720.39!2d88.4626396!3d22.724586!3m2!1i1024!2i768!4f13.1!4m2!3d22.7245856!4d88.4806644!15m2!1m1!4s',
+  mapSrc: 'https://maps.google.com/maps?q=22.724586,88.4806644&t=&z=15&ie=UTF8&iwloc=&output=embed',
   mapLink: 'https://maps.app.goo.gl/m76stFHB1HcHUwjM8',
   services: [
     {

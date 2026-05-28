@@ -11,7 +11,7 @@ const DOCTOR = {
   experience: '15+',
   location: 'Barasat, North 24 Parganas, West Bengal',
   address: 'Barasat, Kolkata – 700124, West Bengal',
-  mapSrc: 'https://www.google.com/maps/embed?pb=!1m17!1s0x39f89b76a8ed3d5d:0x8d5fe6daaa8776fb!2sDr.+Samik+Sanyal!3m8!1m3!1d3680.51!2d88.3714998!3d22.7091559!3m2!1i1024!2i768!4f13.1!4m2!3d22.709151!4d88.3740747!15m2!1m1!4s',
+  mapSrc: 'https://maps.google.com/maps?q=22.7091559,88.3740747&t=&z=15&ie=UTF8&iwloc=&output=embed',
   mapLink: 'https://maps.app.goo.gl/XADCwfR8c63CyDGH7',
   services: [
     {
