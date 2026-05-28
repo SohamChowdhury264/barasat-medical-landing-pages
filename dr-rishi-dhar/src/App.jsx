@@ -57,6 +57,13 @@ export default function App() {
             <p className="text-white font-bold text-lg leading-tight tracking-tight">{DOCTOR.name}</p>
             <p className="text-sky-400 text-xs font-medium tracking-wide">{DOCTOR.shortSpecialty}</p>
           </div>
+          {/* Navigation Links */}
+          <div className="hidden md:flex items-center gap-6 text-slate-300 font-medium text-sm">
+            <a href="#about" className="hover:text-white transition-colors">About</a>
+            <a href="#services" className="hover:text-white transition-colors">Services</a>
+            <a href="#reviews" className="hover:text-white transition-colors">Reviews</a>
+            <a href="#location" className="hover:text-white transition-colors">Map</a>
+          </div>
           <a
             id="navbar-book-btn"
             href={`https://wa.me/${DOCTOR.whatsapp}?text=Hello%20Dr.%20Dhar%2C%20I%20would%20like%20to%20book%20an%20appointment.`}
@@ -197,7 +204,7 @@ export default function App() {
       </section>
 
       {/* ===== ABOUT STRIP ===== */}
-      <section className="py-16" style={{background: 'linear-gradient(135deg, #0f172a 0%, #0c2340 100%)'}}>
+      <section id="about" className="py-16" style={{background: 'linear-gradient(135deg, #0f172a 0%, #0c2340 100%)'}}>
         <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <p className="text-sky-400 font-semibold tracking-widest text-sm uppercase mb-2">About</p>
