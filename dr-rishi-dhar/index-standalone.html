@@ -102,15 +102,15 @@
       <!-- Doctor card -->
       <div class="flex justify-center lg:justify-end">
         <div class="relative">
-          <div class="w-72 h-80 lg:w-80 lg:h-96 rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40 flex flex-col items-center justify-center gap-4" style="background:linear-gradient(135deg,#0c4a6e 0%,#0f172a 100%);">
-            <div class="w-32 h-32 rounded-full bg-sky-800/60 border-4 border-sky-500/40 flex items-center justify-center text-6xl shadow-inner">👨‍⚕️</div>
-            <div class="text-center px-4">
-              <p class="text-white font-bold text-lg">Dr. Rishi Dhar</p>
-              <p class="text-sky-400 text-sm">Chest Physician</p>
-              <p class="text-slate-400 text-xs mt-1">Barasat, West Bengal</p>
+          <div class="w-72 h-96 lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40 flex flex-col justify-end relative" style="background:linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url('public/doctor.png'); background-size: cover; background-position: center;">
+            <div class="p-6 relative z-10">
+              <p class="text-white font-extrabold text-xl">Dr. Rishi Dhar</p>
+              <p class="text-sky-400 text-sm font-semibold mb-1">Pulmonologist & Chest Specialist</p>
+              <p class="text-slate-300 text-xs font-medium">MBBS, MD (Respiratory Medicine) – WBUHS</p>
+              <p class="text-slate-400 text-xs mt-1 flex items-center gap-1">📍 Barasat, West Bengal</p>
             </div>
           </div>
-          <div class="absolute -bottom-4 -left-4 bg-emerald-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1.5">⭐ 5.0 Rated</div>
+          <div class="absolute -bottom-4 -left-4 bg-emerald-500 text-white text-sm font-extrabold px-4 py-2 rounded-full shadow-lg flex items-center gap-1.5">⭐ 5.0 Google Rated</div>
         </div>
       </div>
     </div>
@@ -182,6 +182,61 @@
     </div>
   </section>
 
+  <!-- ====== WALL OF FAME (REVIEWS) ====== -->
+  <section id="reviews" class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <p class="text-sky-600 font-semibold tracking-widest text-sm uppercase mb-2">Wall of Fame</p>
+        <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3">What Our Patients Say</h2>
+        <p class="text-slate-500 text-lg max-w-xl mx-auto">Real experiences from patients who recovered under Dr. Rishi Dhar's expert care.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 gap-1 mb-4">⭐⭐⭐⭐⭐</div>
+            <p class="text-slate-600 italic leading-relaxed mb-6">"Dr. Rishi Dhar is an exceptional pulmonologist. He listened patiently to my asthma symptoms and prescribed a treatment that worked wonders. Highly recommended!"</p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+            <div class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm">AB</div>
+            <div>
+              <p class="text-slate-900 font-bold text-sm">Ayan Banerjee</p>
+              <p class="text-slate-400 text-xs">Verified Google Review</p>
+            </div>
+          </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 gap-1 mb-4">⭐⭐⭐⭐⭐</div>
+            <p class="text-slate-600 italic leading-relaxed mb-6">"Very friendly and down-to-earth doctor. He explained my father's lung infection recovery steps clearly without unnecessary tests."</p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+            <div class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm">PS</div>
+            <div>
+              <p class="text-slate-900 font-bold text-sm">Priya Sen</p>
+              <p class="text-slate-400 text-xs">Verified Justdial Review</p>
+            </div>
+          </div>
+        </div>
+        <!-- Review 3 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 gap-1 mb-4">⭐⭐⭐⭐⭐</div>
+            <p class="text-slate-600 italic leading-relaxed mb-6">"He is very polite and professional. Suraksha Diagnostic's environment was great and Dr. Dhar's consultation was excellent."</p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+            <div class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm">RD</div>
+            <div>
+              <p class="text-slate-900 font-bold text-sm">Rajesh Dutta</p>
+              <p class="text-slate-400 text-xs">Verified Google Review</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ====== CHAMBER & MAP ====== -->
   <section id="location" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
@@ -192,22 +247,25 @@
       </div>
       <div class="grid lg:grid-cols-2 gap-8 items-start">
         <!-- Hours card -->
-        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
-          <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2"><span class="text-sky-600">🕐</span> Consultation Hours</h3>
-          <div class="space-y-1 mb-8">
-            <div class="flex justify-between items-center py-3 border-b border-slate-200"><span class="text-slate-700 font-medium">Monday – Friday</span><span class="font-semibold text-sky-600">10:00 AM – 2:00 PM</span></div>
-            <div class="flex justify-between items-center py-3 border-b border-slate-200"><span class="text-slate-700 font-medium">Monday – Friday</span><span class="font-semibold text-sky-600">5:00 PM – 8:00 PM</span></div>
-            <div class="flex justify-between items-center py-3 border-b border-slate-200"><span class="text-slate-700 font-medium">Saturday</span><span class="font-semibold text-sky-600">10:00 AM – 2:00 PM</span></div>
-            <div class="flex justify-between items-center py-3"><span class="text-slate-700 font-medium">Sunday</span><span class="font-semibold text-red-400">Closed</span></div>
-          </div>
-          <div class="bg-sky-50 border border-sky-100 rounded-xl p-4 mb-4">
-            <p class="text-sky-800 font-medium text-sm flex items-start gap-2"><span class="text-lg mt-0.5">📍</span><span><strong>Address:</strong> Barasat, North 24 Parganas, Kolkata – 700124, West Bengal</span></p>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a id="location-book-btn" href="https://wa.me/918697290468?text=Hello%20Dr.%20Dhar%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer"
-              class="flex-1 flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold px-4 py-3 rounded-xl text-sm transition-colors">📅 Book via WhatsApp</a>
-            <a id="location-directions-btn" href="https://maps.app.goo.gl/m76stFHB1HcHUwjM8" target="_blank" rel="noopener noreferrer"
-              class="flex-1 flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-4 py-3 rounded-xl text-sm transition-colors">🗺 Get Directions</a>
+        <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+          <div class="w-full h-48 bg-cover bg-center" style="background-image: url('public/clinic.png');"></div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2"><span class="text-sky-600">🕐</span> Consultation Hours</h3>
+            <div class="space-y-1 mb-8">
+              <div class="flex justify-between items-center py-3 border-b border-slate-200"><span class="text-slate-700 font-medium">Monday – Friday</span><span class="font-semibold text-sky-600">10:00 AM – 2:00 PM</span></div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-200"><span class="text-slate-700 font-medium">Monday – Friday</span><span class="font-semibold text-sky-600">5:00 PM – 8:00 PM</span></div>
+              <div class="flex justify-between items-center py-3 border-b border-slate-200"><span class="text-slate-700 font-medium">Saturday</span><span class="font-semibold text-sky-600">10:00 AM – 2:00 PM</span></div>
+              <div class="flex justify-between items-center py-3"><span class="text-slate-700 font-medium">Sunday</span><span class="font-semibold text-red-400">Closed</span></div>
+            </div>
+            <div class="bg-sky-50 border border-sky-100 rounded-xl p-4 mb-4">
+              <p class="text-sky-800 font-medium text-sm flex items-start gap-2"><span class="text-lg mt-0.5">📍</span><span><strong>Address:</strong> Barasat, North 24 Parganas, Kolkata – 700124, West Bengal</span></p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a id="location-book-btn" href="https://wa.me/918697290468?text=Hello%20Dr.%20Dhar%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer"
+                class="flex-1 flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold px-4 py-3 rounded-xl text-sm transition-colors">📅 Book via WhatsApp</a>
+              <a id="location-directions-btn" href="https://maps.app.goo.gl/m76stFHB1HcHUwjM8" target="_blank" rel="noopener noreferrer"
+                class="flex-1 flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-4 py-3 rounded-xl text-sm transition-colors">🗺 Get Directions</a>
+            </div>
           </div>
         </div>
         <!-- Map -->
