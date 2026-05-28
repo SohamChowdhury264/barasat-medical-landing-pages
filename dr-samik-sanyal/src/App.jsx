@@ -83,7 +83,7 @@ export default function App() {
       </nav>
 
       {/* ===== HERO ===== */}
-      <section id="hero" className="relative lg:min-h-screen flex items-center overflow-hidden" style={{background: 'linear-gradient(135deg, #0f172a 0%, #1e0b2e 50%, #0f172a 100%)'}}>
+      <section id="hero" className="relative md:min-h-screen flex items-center overflow-hidden" style={{background: 'linear-gradient(135deg, #0f172a 0%, #1e0b2e 50%, #0f172a 100%)'}}>
         {/* Animated background blobs */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-10" style={{background: 'radial-gradient(circle, #db2777, transparent)', filter: 'blur(60px)'}}></div>
@@ -94,46 +94,45 @@ export default function App() {
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'linear-gradient(rgba(219,39,119,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(219,39,119,0.3) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
 
-        <div className="relative max-w-6xl mx-auto px-4 pt-16 pb-6 lg:pt-32 lg:pb-20 grid lg:grid-cols-2 gap-4 lg:gap-12 items-center w-full">
+        <div className="relative max-w-6xl mx-auto px-4 pt-16 pb-6 md:pt-32 md:pb-20 grid md:grid-cols-2 gap-4 md:gap-12 items-center w-full">
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/30 rounded-full px-3 py-1 mb-2 lg:mb-6">
-              <span className="text-pink-400 text-[10px] sm:text-xs font-semibold tracking-widest uppercase">Sukchar & Sodepur's Trusted Women's Specialist</span>
+            <div className="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/30 rounded-full px-3 py-1 mb-2 md:mb-6">
+              <span className="text-pink-400 text-[10px] md:text-xs font-semibold tracking-widest uppercase">Sukchar & Sodepur's Trusted Women's Specialist</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-2 lg:mb-5">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-2 md:mb-5">
               Your Health,<br/>
               <span className="bg-gradient-to-r from-pink-400 to-rose-300 bg-clip-text text-transparent">In Trusted Hands.</span>
             </h1>
 
-            <p className="text-slate-300 text-xs sm:text-base lg:text-lg mb-3 lg:mb-6 leading-relaxed">
+            <p className="text-slate-300 text-xs sm:text-base md:text-lg mb-3 md:mb-6 leading-relaxed">
               Compassionate women's healthcare for the families of Sodepur, Sukchar, and North 24 Parganas. From maternity care to complex gynaecological conditions — expert help, close to home.
             </p>
 
-            <div className="flex flex-wrap gap-2 mb-4 lg:mb-8">
+            <div className="flex flex-wrap gap-2 mb-4 md:mb-8">
               <a
                 id="hero-book-btn"
                 href={`https://wa.me/${DOCTOR.whatsapp}?text=Hello%20Dr.%20Sanyal%2C%20I%20would%20like%20to%20book%20an%20appointment.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-pink-600 hover:bg-pink-500 text-white font-bold px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-base transition-all duration-200 shadow-lg hover:shadow-pink-500/40 hover:-translate-y-0.5"
+                className="flex items-center gap-2 bg-pink-600 hover:bg-pink-500 text-white font-bold px-3 py-2 md:px-6 md:py-3 rounded-full text-xs md:text-base transition-all duration-200 shadow-lg hover:shadow-pink-500/40 hover:-translate-y-0.5"
               >
                 📅 Book Appointment
               </a>
               <a
                 id="hero-call-btn"
                 href={`tel:${DOCTOR.phone}`}
-                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-base transition-all duration-200 hover:-translate-y-0.5"
+                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-3 py-2 md:px-6 md:py-3 rounded-full text-xs md:text-base transition-all duration-200 hover:-translate-y-0.5"
               >
                 📞 Call Now
               </a>
             </div>
           </div>
 
-          {/* Doctor Photo */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-start md:justify-end">
             <div className="relative">
-              <div className="w-full max-w-[240px] sm:max-w-xs h-[280px] sm:h-[380px] lg:w-80 lg:h-[460px] rounded-2xl overflow-hidden border-2 border-pink-500/30 shadow-2xl flex flex-col justify-end relative mx-auto lg:mx-0" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url(${doctorImg})`, backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: '0 25px 80px rgba(219,39,119,0.3)'}}>
+              <div className="w-full max-w-[240px] sm:max-w-xs h-[280px] sm:h-[380px] md:w-80 md:h-[460px] rounded-2xl overflow-hidden border-2 border-pink-500/30 shadow-2xl flex flex-col justify-end relative md:mx-0" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url(${doctorImg})`, backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: '0 25px 80px rgba(219,39,119,0.3)'}}>
                 <div className="p-3 sm:p-6 relative z-10 text-left">
                   <p className="text-white font-extrabold text-lg sm:text-xl">{DOCTOR.name}</p>
                   <p className="text-pink-400 text-xs sm:text-sm font-semibold mb-1">{DOCTOR.specialty}</p>
