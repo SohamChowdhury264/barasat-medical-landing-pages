@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import doctorImg from './assets/doctor.png'
 
 const DOCTOR = {
   name: 'Dr. Rishi Dhar',
@@ -132,7 +133,7 @@ export default function App() {
           {/* Doctor Photo */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-72 h-96 lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40 flex flex-col justify-end relative" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url('/doctor.png')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="w-72 h-96 lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40 flex flex-col justify-end relative" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url(${doctorImg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
                 <div className="p-6 relative z-10 text-left">
                   <p className="text-white font-extrabold text-xl">{DOCTOR.name}</p>
                   <p className="text-sky-400 text-sm font-semibold mb-1">Pulmonologist & Chest Specialist</p>
