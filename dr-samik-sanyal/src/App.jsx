@@ -83,7 +83,7 @@ export default function App() {
       </nav>
 
       {/* ===== HERO ===== */}
-      <section id="hero" className="relative md:min-h-screen flex items-center overflow-hidden" style={{background: 'linear-gradient(135deg, #0f172a 0%, #1e0b2e 50%, #0f172a 100%)'}}>
+      <section id="hero" className="relative md:min-h-[600px] flex items-center overflow-hidden" style={{background: 'linear-gradient(135deg, #0f172a 0%, #1e0b2e 50%, #0f172a 100%)'}}>
         {/* Animated background blobs */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-10" style={{background: 'radial-gradient(circle, #db2777, transparent)', filter: 'blur(60px)'}}></div>
