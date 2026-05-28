@@ -94,23 +94,23 @@ export default function App() {
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'linear-gradient(rgba(219,39,119,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(219,39,119,0.3) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
 
-        <div className="relative max-w-6xl mx-auto px-4 pt-16 pb-6 md:pt-32 md:pb-20 grid md:grid-cols-2 gap-4 md:gap-12 items-center w-full">
+        <div className="relative max-w-6xl mx-auto px-4 pt-14 pb-2 md:pt-32 md:pb-20 grid md:grid-cols-2 gap-2 md:gap-12 items-center w-full">
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/30 rounded-full px-3 py-1 mb-2 md:mb-6">
+            <div className="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/30 rounded-full px-3 py-1 mb-1 md:mb-6">
               <span className="text-pink-400 text-[10px] md:text-xs font-semibold tracking-widest uppercase">Sukchar & Sodepur's Trusted Women's Specialist</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-2 md:mb-5">
+            <h1 className="text-xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-1 md:mb-5">
               Your Health,<br/>
               <span className="bg-gradient-to-r from-pink-400 to-rose-300 bg-clip-text text-transparent">In Trusted Hands.</span>
             </h1>
 
-            <p className="text-slate-300 text-xs sm:text-base md:text-lg mb-3 md:mb-6 leading-relaxed">
+            <p className="text-slate-300 text-[11px] sm:text-base md:text-lg mb-1.5 md:mb-6 leading-relaxed">
               Compassionate women's healthcare for the families of Sodepur, Sukchar, and North 24 Parganas. From maternity care to complex gynaecological conditions — expert help, close to home.
             </p>
 
-            <div className="flex flex-wrap gap-2 mb-4 md:mb-8">
+            <div className="flex flex-wrap gap-2 mb-2 md:mb-8">
               <a
                 id="hero-book-btn"
                 href={`https://wa.me/${DOCTOR.whatsapp}?text=Hello%20Dr.%20Sanyal%2C%20I%20would%20like%20to%20book%20an%20appointment.`}
@@ -132,7 +132,7 @@ export default function App() {
 
           <div className="flex justify-start md:justify-end">
             <div className="relative">
-              <div className="w-full max-w-[240px] sm:max-w-xs h-[280px] sm:h-[380px] md:w-80 md:h-[460px] rounded-2xl overflow-hidden border-2 border-pink-500/30 shadow-2xl flex flex-col justify-end relative md:mx-0" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url(${doctorImg})`, backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: '0 25px 80px rgba(219,39,119,0.3)'}}>
+              <div className="w-full max-w-[210px] sm:max-w-xs h-[210px] sm:h-[380px] md:w-80 md:h-[460px] rounded-2xl overflow-hidden border-2 border-pink-500/30 shadow-2xl flex flex-col justify-end relative md:mx-0" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url(${doctorImg})`, backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: '0 25px 80px rgba(219,39,119,0.3)'}}>
                 <div className="p-3 sm:p-6 relative z-10 text-left">
                   <p className="text-white font-extrabold text-lg sm:text-xl">{DOCTOR.name}</p>
                   <p className="text-pink-400 text-xs sm:text-sm font-semibold mb-1">{DOCTOR.specialty}</p>

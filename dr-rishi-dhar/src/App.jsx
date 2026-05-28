@@ -94,23 +94,23 @@ export default function App() {
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'linear-gradient(rgba(2,132,199,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(2,132,199,0.3) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
 
-        <div className="relative max-w-6xl mx-auto px-4 pt-16 pb-6 md:pt-32 md:pb-20 grid md:grid-cols-2 gap-4 md:gap-12 items-center w-full">
+        <div className="relative max-w-6xl mx-auto px-4 pt-14 pb-2 md:pt-32 md:pb-20 grid md:grid-cols-2 gap-2 md:gap-12 items-center w-full">
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/30 rounded-full px-3 py-1 mb-2 md:mb-6">
+            <div className="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/30 rounded-full px-3 py-1 mb-1 md:mb-6">
               <span className="text-sky-400 text-[10px] md:text-xs font-semibold tracking-widest uppercase">Barasat's Trusted Chest Specialist</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-2 md:mb-5">
+            <h1 className="text-xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-1 md:mb-5">
               Breathe Easier.<br/>
               <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">Live Better.</span>
             </h1>
 
-            <p className="text-slate-300 text-xs sm:text-base md:text-lg mb-3 md:mb-6 leading-relaxed">
+            <p className="text-slate-300 text-[11px] sm:text-base md:text-lg mb-1.5 md:mb-6 leading-relaxed">
               Expert chest medicine care for the families of Barasat and North 24 Parganas. From asthma to complex pulmonary conditions — get the right diagnosis, right here.
             </p>
 
-            <div className="flex flex-wrap gap-2 mb-4 md:mb-8">
+            <div className="flex flex-wrap gap-2 mb-2 md:mb-8">
               <a
                 id="hero-book-btn"
                 href={`https://wa.me/${DOCTOR.whatsapp}?text=Hello%20Dr.%20Dhar%2C%20I%20would%20like%20to%20book%20an%20appointment.`}
@@ -133,7 +133,7 @@ export default function App() {
           {/* Doctor Photo */}
           <div className="flex justify-start md:justify-end">
             <div className="relative">
-              <div className="w-full max-w-[240px] sm:max-w-xs h-[280px] sm:h-[340px] md:w-80 md:h-[420px] rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40 flex flex-col justify-end relative md:mx-0" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url(${doctorImg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="w-full max-w-[210px] sm:max-w-xs h-[210px] sm:h-[340px] md:w-80 md:h-[420px] rounded-2xl overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-900/40 flex flex-col justify-end relative md:mx-0" style={{background: `linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.95) 90%), url(${doctorImg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
                 <div className="p-3 sm:p-6 relative z-10 text-left">
                   <p className="text-white font-extrabold text-lg sm:text-xl">{DOCTOR.name}</p>
                   <p className="text-sky-400 text-xs sm:text-sm font-semibold mb-1">Pulmonologist & Chest Specialist</p>
