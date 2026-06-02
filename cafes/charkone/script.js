@@ -221,6 +221,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
   }, { passive: true });
 }
 
+
 // ──────────────── INSTAGRAM EMBED RELOAD ────────────────
 if (window.instgrm) {
   window.instgrm.Embeds.process();
@@ -231,3 +232,194 @@ window.addEventListener('load', () => {
     window.instgrm.Embeds.process();
   }
 });
+
+// ──────────────── BOOKING FORM — OCCASION TAGS ────────────────
+(function initBookingTags() {
+  const tags = document.querySelectorAll('.bf-tag');
+  const hiddenInput = document.getElementById('bf-occasion');
+  if (!tags.length || !hiddenInput) return;
+
+  tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      const isActive = tag.classList.contains('active');
+      // Deselect all
+      tags.forEach(t => t.classList.remove('active'));
+      if (!isActive) {
+        tag.classList.add('active');
+        hiddenInput.value = tag.dataset.value;
+      } else {
+        hiddenInput.value = '';
+      }
+    });
+  });
+})();
+
+// ──────────────── BOOKING FORM — WHATSAPP SUBMIT ────────────────
+(function initBookingForm() {
+  const form = document.getElementById('booking-form');
+  if (!form) return;
+
+  // Set min date to today
+  const dateInput = document.getElementById('bf-date');
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name    = document.getElementById('bf-name')?.value.trim();
+    const phone   = document.getElementById('bf-phone')?.value.trim();
+    const date    = document.getElementById('bf-date')?.value;
+    const time    = document.getElementById('bf-time')?.value;
+    const guests  = document.getElementById('bf-guests')?.value;
+    const zone    = document.getElementById('bf-zone')?.value;
+    const occasion = document.getElementById('bf-occasion')?.value;
+
+    if (!name || !phone || !date || !time || !guests || !zone) {
+      // Shake unfilled fields
+      [
+        { id: 'bf-name', val: name },
+        { id: 'bf-phone', val: phone },
+        { id: 'bf-date', val: date },
+        { id: 'bf-time', val: time },
+        { id: 'bf-guests', val: guests },
+        { id: 'bf-zone', val: zone }
+      ].forEach(({ id, val }) => {
+        if (!val) {
+          const el = document.getElementById(id);
+          if (el) {
+            el.style.borderColor = '#ff4d4d';
+            el.style.boxShadow = '0 0 0 3px rgba(255,77,77,0.2)';
+            setTimeout(() => {
+              el.style.borderColor = '';
+              el.style.boxShadow = '';
+            }, 2500);
+          }
+        }
+      });
+      return;
+    }
+
+    // Format date nicely
+    const dateObj = new Date(date + 'T00:00:00');
+    const options = { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' };
+    const niceDate = dateObj.toLocaleDateString('en-IN', options);
+
+    const msg = [
+      `*🍽️ CharKone RestoCafe — Table Reservation*`,
+      ``,
+      `👤 *Name:* ${name}`,
+      `📞 *Phone:* ${phone}`,
+      `📅 *Date:* ${niceDate}`,
+      `🕐 *Time:* ${time}`,
+      `👥 *Guests:* ${guests}`,
+      `🌌 *Zone:* ${zone}`,
+      occasion ? `🎉 *Occasion:* ${occasion}` : null,
+      ``,
+      `_Please confirm my reservation. Thank you!_ 🙏`
+    ].filter(Boolean).join('\n');
+
+    const waNumber = '918902727154';
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+    window.open(waUrl, '_blank');
+  });
+})();
+
+// ──────────────── CHARKONE REVIEWS CAROUSEL ────────────────
+(function initCharKoneReviews() {
+  const track = document.getElementById('charkone-reviews-track');
+  const prevBtn = document.getElementById('ck-reviewPrev');
+  const nextBtn = document.getElementById('ck-reviewNext');
+  const dotsContainer = document.getElementById('ck-reviewDots');
+  if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+
+  const cards = track.querySelectorAll('.review-card');
+  let current = 0;
+  let autoplayTimer;
+
+  // Build dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'review-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', `Go to review ${i + 1}`);
+    dot.setAttribute('aria-selected', String(i === 0));
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function getCardWidth() {
+    if (!cards[0]) return 0;
+    const style = window.getComputedStyle(track);
+    const gapVal = parseFloat(style.gap) || 24;
+    return cards[0].getBoundingClientRect().width + gapVal;
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, cards.length - 1));
+    track.style.transform = `translateX(-${getCardWidth() * current}px)`;
+    dotsContainer.querySelectorAll('.review-dot').forEach((dot, i) => {
+      const active = i === current;
+      dot.classList.toggle('active', active);
+      dot.setAttribute('aria-selected', String(active));
+    });
+    cards.forEach((card, i) => card.setAttribute('aria-hidden', String(i !== current)));
+    resetAutoplay();
+  }
+
+  function next() { goTo(current < cards.length - 1 ? current + 1 : 0); }
+  function prev() { goTo(current > 0 ? current - 1 : cards.length - 1); }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  // Touch/swipe
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+  }, { passive: true });
+
+  // Autoplay
+  function startAutoplay() { autoplayTimer = setInterval(next, 5000); }
+  function resetAutoplay() { clearInterval(autoplayTimer); startAutoplay(); }
+  startAutoplay();
+
+  // Pause on hover
+  const section = track.closest('.reviews-section');
+  if (section) {
+    section.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+    section.addEventListener('mouseleave', startAutoplay);
+  }
+
+  // Re-position on resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => goTo(current), 200);
+  });
+})();
+
+// ──────────────── UPDATE SCROLL REVEAL TARGETS ────────────────
+(function updateRevealTargets() {
+  const newTargets = [
+    '.booking-header', '.booking-form',
+    '.reviews-header', '.reviews-track-wrapper', '.reviews-nav', '.reviews-cta',
+    '.reel-frame-col', '.reel-content-col'
+  ];
+  newTargets.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      if (!el.classList.contains('reveal')) {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+      }
+    });
+  });
+})();
+
